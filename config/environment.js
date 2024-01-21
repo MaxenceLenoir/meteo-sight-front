@@ -24,6 +24,7 @@ module.exports = function (environment) {
   };
 
   if (environment === 'development') {
+    ENV.APP.HOST = 'http://localhost:3000';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -44,6 +45,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
+    ENV.APP.HOST = 'https://meteo-sight-api.onrender.com';
     // here you can enable a production-specific feature
   }
 

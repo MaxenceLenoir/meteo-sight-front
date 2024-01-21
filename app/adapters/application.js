@@ -1,7 +1,8 @@
 import RESTAdapter from '@ember-data/adapter/rest';
+import ENV from 'meteo-sight-front/config/environment';
 
 export default class ApplicationAdapter extends RESTAdapter {
-  host = 'http://localhost:3000';
+  host = ENV.APP.HOST;
 
   ajax(url, type, options) {
     options = options || {};
