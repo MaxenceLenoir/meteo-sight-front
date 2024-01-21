@@ -5,6 +5,12 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function (defaults) {
   const app = new EmberApp(defaults, {
     // Add options here
+    'ember-cli-netlify': {
+      redirects: [
+        'https://effortless-stardust-6addd5.netlify.app/* https://effortless-stardust-6addd5.netlify.app/searches/new',
+        'https://effortless-stardust-6addd5.netlify.app/* https://effortless-stardust-6addd5.netlify.app/searches/:id',
+      ],
+    },
   });
 
   const { Webpack } = require('@embroider/webpack');
