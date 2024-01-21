@@ -1,0 +1,17 @@
+{{page-title "New"}}
+  <LinkTo @route="searches.new" class="underline hover:opacity-50">Back</LinkTo>
+  <div class="flex flex-col items-center space-y-6">
+    <h1 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-violet-500">Meteo in {{ @model.city }}</h1>
+    <div class="flex flex-wrap justify-around gap-4">
+      {{#each @model.data.list as |data| }}
+        <div class="flex flex-col items-center w-40 p-2 space-y-1 border border-blue-200 shadow-lg bg-blue-300/50 rounded-xl">
+          <div class="font-bold">{{ date-helper data.dt_txt }}</div>
+          <div class="text-sm opacity-80">{{ time-helper data.dt_txt }}</div>
+          <div class="text-blue-400">{{get (get data.weather 0) "main"}}</div>
+          <img src="http://openweathermap.org/img/w/{{{get (get data.weather 0) "icon"}}}.png" />
+          <div class="text-2xl text-white">{{ temp-helper data.main.temp }} °C</div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+{{outlet}}

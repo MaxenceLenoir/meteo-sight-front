@@ -1,0 +1,4 @@
+<form {{on "submit" this.onSubmit}}>
+  <Input @value={{this.city}} placeholder="test" class="px-2 py-0.5 border-2 border-blue-200 rounded-md outline-none focus:border-blue-400" />
+  <button type="submit" disabled={{this.disableSubmit}} class="px-2 py-0.5 text-white bg-blue-300 rounded-md hover:cursor-pointer hover:bg-blue-400">Send</button>
+</form>
