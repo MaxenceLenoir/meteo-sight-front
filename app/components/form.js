@@ -19,8 +19,12 @@ export default class FormComponent extends Component {
       city: this.city,
     };
     const search = this.store.createRecord('search', data);
-    await search.save();
+    try {
+      await search.save();
 
-    this.router.transitionTo('searches.show', search);
+      this.router.transitionTo('searches.show', search);
+    } catch {
+      this.router.transitionTo('error', search);
+    }
   }
 }
